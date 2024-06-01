@@ -12,8 +12,15 @@ body {
   --secondary-text-color: #5c5c62;
   --durability-text-color: #6a737d9c;
   --icon-color: #6a737d;
-  --border-color: #ff9a0045;
   --text-decoration-color: #ff9a00;
+  --primary-color: #86a8e7;
+  --secondary-color: #e1bfd3;
+  --third-color: #7ae1db;
+}
+
+ul,
+ol {
+  margin: 0;
 }
 
 .container {
@@ -43,7 +50,7 @@ body {
 }
 
 .resume__block {
-  border-bottom: 3px solid var(--border-color);
+  border-bottom: 3px solid var(--third-color);
   padding-bottom: 30px;
   margin-bottom: 15px;
 }
@@ -77,8 +84,10 @@ body {
 .contact-info__header {
   color: var(--primary-text-color);
   margin-bottom: 15px;
-  text-decoration-color: var(--text-decoration-color);
-  text-decoration-line: underline;
+  color: var(--primary-color);
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  /* text-transform: uppercase; */
 }
 
 .contact-info__sub-header {
@@ -129,7 +138,6 @@ body {
   height: 100px;
   object-fit: cover;
   border: 3px solid;
-  border-color: var(--text-decoration-color);
 }
 
 /* Intro and skills styles */
@@ -137,22 +145,6 @@ body {
 .intro {
   display: flex;
   justify-content: start;
-}
-
-.intro__icon-wrapper {
-  margin-right: 30px;
-  width: 30px;
-  display: flex;
-  justify-content: center;
-}
-
-.intro__icon {
-  height: 1.1428rem;
-  vertical-align: text-bottom;
-}
-
-.intro__icon path {
-  fill: var(--text-decoration-color);
 }
 
 .intro_text {
@@ -164,6 +156,10 @@ body {
   color: var(--secondary-text-color);
   text-align: center;
   margin-bottom: 15px;
+  color: var(--primary-color);
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
 }
 
 .skills__text {
@@ -174,14 +170,22 @@ body {
 /* Experience and additional info styles */
 
 .experiences {
-  flex: 1 1 60%;
-  margin-right: 50px;
+  flex: 1 1 55%;
+  margin-right: 30px;
 }
 
 .experiences__header {
-  color: var(--secondary-text-color);
+  color: var(--primary-color);
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
   text-align: left;
   margin-bottom: 20px;
+}
+
+.experiences__company {
+  padding-left: 14px;
+  border-left: 2px solid rgba(51, 51, 51, 0.2);
 }
 
 .experiences__company-header-durability {
@@ -189,14 +193,25 @@ body {
   text-align: left;
   margin-bottom: 10px;
   font-size: 15px;
+  display: inline-block;
+  width: 190px;
+  flex-shrink: 0;
+  text-align: center;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  padding: 5px 12px;
+  color: #ffffff;
+  border-radius: 28px;
+  background: var(--third-color);
+  position: relative;
+  font-size: 14px;
+  font-weight: 300;
 }
 
 .experiences__company-header-name {
   color: var(--primary-text-color);
-  text-decoration-color: var(--text-decoration-color);
-  text-decoration-line: underline;
   text-align: left;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .experiences__company-project {
@@ -223,34 +238,79 @@ body {
 }
 
 .additional-info {
-  flex: 1 1 40%;
+  flex: 1 1 45%;
 }
 
 .additional-info__education {
   margin-bottom: 20px;
+  flex-grow: 1;
+  flex-shrink: 1;
 }
 
 .additional-info__education-header {
   color: var(--secondary-text-color);
   text-align: left;
   margin-bottom: 20px;
+  color: var(--primary-color);
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
 }
 
-.additional-info__education-university-durability {
-  color: var(--durability-text-color);
-  text-align: left;
-  margin-bottom: 10px;
-  font-size: 15px;
+/* Education */
+
+.education-timeline {
+  margin-bottom: 20px;
 }
 
-.additional-info__education-university-speciality {
+.education-timeline__list {
+  border-left: 2px solid rgba(51, 51, 51, 0.2);
+}
+
+.education-item {
+  display: flex;
+  align-items: baseline;
+}
+
+.education-item:not(:last-child) {
+  margin-bottom: 35px;
+}
+
+.education-item__durability {
+  width: 100px;
+  flex-shrink: 0;
+  text-align: center;
+  margin: 0px 18px;
+  padding: 5px 12px;
+  color: #ffffff;
+  border-radius: 28px;
+  background: var(--third-color);
+  position: relative;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.education-item__university {
   color: var(--primary-text-color);
-  text-align: left;
-  margin-bottom: 10px;
+  font-size: 18px;
+  margin-bottom: 5px;
 }
 
-.additional-info__education-university-name {
+.education-item__speciality {
   color: var(--secondary-text-color);
+  font-size: 16px;
+}
+
+.education-item__durability::before,
+.experiences__company-header-durability::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  left: -32px;
+  border: 2px solid var(--third-color);
 }
 
 .additional-info__languages {
@@ -261,8 +321,13 @@ body {
   color: var(--secondary-text-color);
   text-align: left;
   margin-bottom: 20px;
+  color: var(--primary-color);
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
 }
 
 .additional-info__languages-item {
   color: var(--secondary-text-color);
+  margin-left: 14px;
 }
