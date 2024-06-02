@@ -172,8 +172,7 @@ ol {
 }
 
 .skills__list {
-    display: flex;
-    flex-wrap: wrap;
+    column-count: 2;
 }
 
 .skills__container--soft,
@@ -184,7 +183,6 @@ ol {
 .skills__list__item {
     padding-left: 16px;
     list-style: none;
-    width: 200px;
     background-image: url(./assets//icons//item.svg);
     background-repeat: no-repeat;
     background-position: left center;
@@ -211,7 +209,8 @@ ol {
     border-left: 2px solid rgba(51, 51, 51, 0.2);
 }
 
-.experiences__company-header-durability {
+.experiences__company-header-durability,
+.timeline-list__item__date {
     color: var(--durability-text-color);
     text-align: left;
     margin-bottom: 10px;
@@ -286,8 +285,7 @@ ol {
     margin-bottom: 20px;
 }
 
-.education-timeline__list,
-.timeline-list {
+.education-timeline__list {
     border-left: 2px solid rgba(51, 51, 51, 0.2);
 }
 
@@ -300,8 +298,7 @@ ol {
     margin-bottom: 35px;
 }
 
-.education-item__durability,
-.timeline-list__item__date {
+.education-item__durability {
     width: 100px;
     flex-shrink: 0;
     text-align: center;
@@ -335,7 +332,7 @@ ol {
     height: 20px;
     background: white;
     border-radius: 50%;
-    left: -32px;
+    left: -30px;
     border: 2px solid var(--third-color);
 }
 
@@ -360,12 +357,23 @@ ol {
 
 /* Timeline */
 
+.timeline-list {
+    column-count: 2;
+    list-style: none;
+}
+
 .timeline-list__item {
-    margin-bottom: 20px;
+    padding-bottom: 14px;
+    padding-left: 12px;
+    border-left: 2px solid rgba(51, 51, 51, 0.2);
 }
 
 .timeline-list__item__info {
     margin-left: 20px;
+}
+
+.timeline-list__item__title {
+    font-weight: 600;
 }
 
 .timeline-list__item__date {
