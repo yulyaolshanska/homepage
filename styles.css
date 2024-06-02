@@ -168,7 +168,8 @@ ol {
 }
 
 .skills__header,
-.timeline-block__header {
+.timeline-block__header,
+.hobbies__header {
     margin-bottom: 15px;
     color: var(--primary-color);
     font-weight: 600;
@@ -369,6 +370,51 @@ ol {
 .additional-info__languages-item {
     color: var(--secondary-text-color);
     margin-left: 14px;
+}
+
+/* Hobbies */
+
+.hobbies {
+    margin-bottom: 30px;
+}
+
+.hobbies__wrapper {
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 577px) {
+    .hobbies__wrapper {
+        margin: 0px -22px;
+        display: flex;
+    }
+}
+
+.hobbies__header {
+    margin-bottom: 25px;
+}
+
+.hobbies__item {
+    padding: 0px 22px;
+    flex: 1 1 33.333%;
+    display: flex;
+    align-items: flex-start;
+}
+
+@media screen and (max-width: 576px) {
+    .hobbies__item {
+        margin-bottom: 16px;
+    }
+}
+
+.hobbies__item img {
+    margin-right: 20px;
+}
+
+.hobbies__item__title {
+    color: var(--primary-text-color);
+}
+.hobbies__item__info p {
+    color: var(--secondary-text-color);
 }
 
 /* Timeline */
