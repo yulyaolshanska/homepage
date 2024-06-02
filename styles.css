@@ -384,7 +384,7 @@ ol {
 
 @media screen and (min-width: 577px) {
     .hobbies__wrapper {
-        margin: 0px -22px;
+        margin: 0 -22px;
         display: flex;
     }
 }
@@ -394,7 +394,7 @@ ol {
 }
 
 .hobbies__item {
-    padding: 0px 22px;
+    padding: 0 22px;
     flex: 1 1 33.333%;
     display: flex;
     align-items: flex-start;
